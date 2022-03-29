@@ -17,15 +17,18 @@ namespace ExpressionBinding
             this.textBox1.DataBindings.Add("Text", obj, "Field");
 
             this.numericUpDown1.Bind(obj, () => numericUpDown1.Value, () => obj.Decimal);
+
             this.checkBox1.DataBindings.Add("Checked", obj, "Bool", true);
 
             // another demo
-            textBox2.Bind(person, () => textBox2.Text, () => person.GivenNames);
+            //textBox2.Bind(person, () => textBox2.Text, () => person.GivenNames);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            obj.Decimal = int.Parse(obj.Field)*2;
             MessageBox.Show(obj.Field);
+
         }
 
         private void button2_Click(object sender, EventArgs e)

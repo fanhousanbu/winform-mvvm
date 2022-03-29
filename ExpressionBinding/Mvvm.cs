@@ -18,10 +18,11 @@ namespace ExpressionBinding
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
+    
     public class Entity : ViewModelNotification
     {
         private string m_Filed = "DefaultValue";
+
         public string Field
         {
             get
@@ -31,6 +32,8 @@ namespace ExpressionBinding
             set
             {
                 this.m_Filed = value;
+                this.m_Decimal = int.Parse(value) * 2;
+                this.OnPropertyChanged("Decimal");
                 this.OnPropertyChanged("Field");
             }
         }        
@@ -46,6 +49,7 @@ namespace ExpressionBinding
             {
                 this.m_Decimal = value;
                 this.OnPropertyChanged("Decimal");
+                this.OnPropertyChanged("Field");
             }
         }
 
