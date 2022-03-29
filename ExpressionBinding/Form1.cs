@@ -1,4 +1,7 @@
-namespace ExpressionBinder
+﻿using System;
+using System.Windows.Forms;
+
+namespace ExpressionBinding
 {
     public partial class Form1 : Form
     {
@@ -8,17 +11,21 @@ namespace ExpressionBinder
         }
 
         Entity obj = new Entity();
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.textBox1.DataBindings.Add("Text", obj, "Field");
-            this.numericUpDown1.DataBindings.Add("Value", obj, "Decimal", true);
+
+            this.numericUpDown1.Bind(obj, () => numericUpDown1.Value, () => obj.Decimal);
             this.checkBox1.DataBindings.Add("Checked", obj, "Bool", true);
+
+            // another demo
+            textBox2.Bind(person, () => textBox2.Text, () => person.GivenNames);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(obj.Field);
-            MessageBox.Show(obj.Field2);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +41,7 @@ namespace ExpressionBinder
         private void button4_Click(object sender, EventArgs e)
         {
             obj.Decimal += 1;
+            obj.Field = obj.Decimal.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -44,6 +52,13 @@ namespace ExpressionBinder
         private void button6_Click(object sender, EventArgs e)
         {
             obj.Bool = !obj.Bool;
+        }
+
+        Person person = new Person();
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(person.GivenNames);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ExpressionBinder
+﻿namespace ExpressionBinding
 {
     partial class Form1
     {
@@ -20,6 +20,8 @@
             base.Dispose(disposing);
         }
 
+
+
         #region Windows 窗体设计器生成的代码
 
         /// <summary>
@@ -40,6 +42,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -170,11 +174,30 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(288, 203);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(164, 21);
+            this.textBox2.TabIndex = 4;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(288, 252);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(164, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "显示实体类的值";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 172);
+            this.ClientSize = new System.Drawing.Size(752, 390);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -187,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -204,5 +228,8 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
     }
 }
+
